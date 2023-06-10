@@ -1,16 +1,9 @@
 { config, lib, pkgs, ... }:
 
-# Remove older generations before running the garbage collector.
-#
-# Unlike the [--delete-older-than] option that can be passed to
-# [nix.gc.options], this script uses [nix-env --delete-generations].
-# This allows to specify a number of generation to keep, removing the risk of
-# removing all older generations.
+# Remove older generations before running the garbage collector
+# using [nix-env --delete-generations].
 #
 # This applies to every profiles (system, user profile, home-manager).
-#
-# This module requires [nix.gc.automatic = true;] to be set and must be enabled
-# by setting [nix.gc.delete_generations = true;].
 
 with lib;
 
